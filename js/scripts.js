@@ -312,5 +312,24 @@ document.addEventListener('DOMContentLoaded', () => {
     //     document.getElementById('totalisimo').innerHTML = " "+formato.format(subtotal * 1.19);
     //     updateStock();
     // }
+    
+    
+    // Search Dropdown Toggle
+    $('.search-toggle').on('click', function (e) {
+        $('.header-search-wrapper').toggleClass('show');
+        e.preventDefault();
+    });
+
+    $('body').on('click', function (e) {
+        if ($('.header-search-wrapper').hasClass('show')) {
+        $('.header-search-wrapper').removeClass('show');
+        $('body').removeClass('is-search-active');
+        }
+    });
+
+    $('.header-search').on('click', function (e) {
+        e.stopPropagation();
+    });
+      
 
 });

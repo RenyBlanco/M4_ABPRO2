@@ -24,7 +24,7 @@
 
 <body>
     <!--Header-->
-    <header>
+    <header class="header">
         <div class="navbar-container">
             <strong>
                 <div class="logo">Tecno Chile</div>
@@ -56,6 +56,38 @@
                 <button class="btn btn-primary btn-purchase" id="pagar" type="button">Pagar</button>
             </section>
         </div> <!--navbar-container-->
+
+        <div class="header-middle">
+            <div class="container">
+                <div class="header-center">
+                    <div class="header-search">
+                        <a href="#" role="button"><i class="fas fa-search"></i></a>
+                        <form action="#" method="get">
+                            <div class="row">
+                                <input type="search" class="form-control" name="q" id="q" placeholder="Buscando por..." autocomplete="off" required>
+                                <div class="select-custom">
+                                    <select id="cat" name="cat">
+                                        <option value="">Todas Categorias</option>
+                                        <option value="5">Electronicos</option>
+                                        <option value="21">- Smart TVs</option>
+                                        <option value="22">- Cameras</option>
+                                        <option value="63">- Games</option>
+                                        <option value="7">Hogar &amp; Jardin</option>
+                                        <option value="11">Motores</option>
+                                        <option value="31">- Autos y Camionetas</option>
+                                        <option value="32">- Motocicletas</option>
+                                        <option value="33">- Partes &amp; Accessorios</option>
+                                        <option value="34">- Botes</option>
+                                        <option value="57">- Herramientas</option>
+                                    </select>
+                                </div><!-- End .select-custom -->
+                                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                            </div><!-- End .header-search-wrapper -->
+                        </form>
+                    </div><!-- End .header-search -->
+                </div><!-- End .headeer-center -->
+            </div><!-- End .container -->
+        </div><!-- End .header-middle -->
     </header>
     
     <!-- Contenido -->
