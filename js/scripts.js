@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
             llenaListado()
         });
     }else{
-        renderizarProductos(arreglo);
+        productos = arreglo;
+        renderizarProductos(productos);
     }
 
     function llenaListado() {
@@ -33,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarProductos(productos);
     }
 
-    function renderizarProductos(valor) {
-        valor.forEach(element => {
+    function renderizarProductos() {
+        productos.forEach(element => {
             // Estructura
             const miNodo = document.createElement('div');
             miNodo.classList.add('col-md-12');
@@ -276,6 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
             var quantity = parseInt(quantityElement.value);
             var dispone = parseInt(stockElement.value);
             var queda = dispone-quantity;
+            console.log('Antes ', productos);
             for(let i=0; i < productos.length; i++) {
                 if(productos[i].id == id){
                     lis[id-1].innerHTML = "disponible : "+(queda);
