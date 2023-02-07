@@ -14,21 +14,27 @@ document.addEventListener('DOMContentLoaded', () => {
     */
 
     var tabla;
-    $.getJSON('js/listado.json', function(data) {
-       tabla = data.basedeDatos;
-       llenaListado()
-    });
+    let arreglo = getCrudData();
     
+    if(arreglo==null){
+        $.getJSON('js/listado.json', function(data) {
+            tabla = data.basedeDatos;
+            llenaListado()
+        });
+    }else{
+        renderizarProductos(arreglo);
+    }
+
     function llenaListado() {
         jQuery.each(tabla.Productos, function(i, fila) {
             productos.push(fila);
         });
-        renderizarProductos();
         setCrud();
+        renderizarProductos(productos);
     }
 
-    function renderizarProductos() {
-        productos.forEach(element => {
+    function renderizarProductos(valor) {
+        valor.forEach(element => {
             // Estructura
             const miNodo = document.createElement('div');
             miNodo.classList.add('col-md-12');
@@ -68,8 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function setCrud () {
+    function setCrud() {
         localStorage.setItem('crud', JSON.stringify(productos));
+    }
+
+    function getCrudData(){
+        let arreglo = JSON.parse(localStorage.getItem('crud'));
+        return arreglo;
     }
     
     (function () {
