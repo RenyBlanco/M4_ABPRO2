@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <!-- Additional CSS -->
     <link rel="stylesheet" href="/css/estilos.css">
-    <link rel="stylesheet" href="css/main.css">
 
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -43,25 +42,37 @@
                         <div class="form-group row">
                             <label for="product" class="col-2 col-form-label">Producto :</label>
                             <div class="col-6">
-                                <input type="text" name="product" id="product" placeholder="Titulo del producto" autocomplete="off">
+                                <input class="form-control" type="text" id="product" placeholder="Titulo del producto" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="descrip" class="col-2 col-form-label">Descripcion :</label>
+                            <div class="col-6">
+                                <input class="form-control" type="text" id="descrip" placeholder="Descripción del producto" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="etiquetas" class="col-2 col-form-label">Etiquetas :</label>
+                            <div class="col-6">
+                                <input class="form-control" type="text" id="etiquetas" placeholder="Etiquetas" autocomplete="off">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="precio" class="col-2 col-form-label">Precio :</label>
                             <div class="col-6">
-                                <input type="number" name="precio" id="precio" placeholder="Precio del producto" autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="stock" class="col-2 col-form-label">Imagen :</label>
-                            <div class="col-6">
-                                <input type="file" class="btn btn-outline-success activo" id="archivo" value="Cambiar archivo"/>
+                                <input class="form-control" type="number" id="precio" placeholder="Precio del producto" autocomplete="off">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="stock" class="col-2 col-form-label">Stock :</label>
                             <div class="col-6">
-                                <input type="number" name="stock" id="stock" placeholder="Stock del producto" autocomplete="off">
+                                <input class="form-control" type="number" id="stock" placeholder="Stock del producto" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="stock" class="col-2 col-form-label">Imagen :</label>
+                            <div class="col-6">
+                                <input type="file" class="btn btn-outline-success activo" id="imagen" value="Cambiar archivo"/>
                             </div>
                         </div>
                     </div>
@@ -70,7 +81,7 @@
                 </div>
             </div>
         </section>
-        <section class="container">
+        <section class="container mt-5">
             <h5>Listado</h5>
             <table class="table">
                 <thead>
@@ -91,9 +102,8 @@
     <!-- Bootstrap JQuery Plugin -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    <!-- Additional Javascript
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/moment.js"></script> -->
+    <!-- Additional Javascript -->
+    <script  type="text/javascript" src="js/Producto.js"></script>
     <script type="text/javascript" src="js/crud.js"></script>
     <!-- SweetAlert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

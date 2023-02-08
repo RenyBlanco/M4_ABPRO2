@@ -4,8 +4,10 @@ carga();
 
 function proceso(){
     let prod = document.getElementById('product').value;
+    let desc = document.getElementById('descrip').value;
+    let tagger = document.getElementById('etiquetas').value;
     let price = document.getElementById('precio').value;
-    //let ima = document.getElementById('imagen').value;
+    let ima = document.getElementById('imagen').value;
     let disp = document.getElementById('stock').value;
     if(prod== ''){
         Swal.fire(
@@ -20,7 +22,18 @@ function proceso(){
                 let data=[prod,price,disp];
                 setCrudData(data);
             }else{
-                arreglo.push(prod,price,disp);
+                const nuevoProducto = new Producto();
+                nuevoProducto.setNombre = prod;
+                nuevoProducto.setDescripcion = desc;
+                nuevoProducto.setEtiquetas = tagger;
+                nuevoProducto.setPrecio = price;
+                var nombre_archivo_seleccionado = ima.replace(/.*[\/\\]/, '');
+                //nombre_archivo_seleccionado = nombre_archivo_seleccionado.replace('.jpg','');
+                nuevoProducto.setImagen = nombre_archivo_seleccionado;
+                nuevoProducto.setStock = disp;
+                console.log('Nuevo', nuevoProducto);
+                
+                arreglo.push(nuevoProducto);
                 setCrudData(arreglo);
                 document.getElementById('product').value = '';
                 Swal.fire(
@@ -34,7 +47,11 @@ function proceso(){
             let arreglo = getCrudData();
             arreglo[id]['nombre']=prod;
             arreglo[id]['precio']=price;
-            //arreglo[id]['imagen']=prod;
+            arreglo[id]['descripcion']=desc;
+            arreglo[id]['etiquetas']=tagger;
+            var nombre_archivo_seleccionado = ima.replace(/.*[\/\\]/, '');
+            //nombre_archivo_seleccionado = nombre_archivo_seleccionado.replace('.jpg','');
+            arreglo[id]['imagen']=nombre_archivo_seleccionado;
             arreglo[id]['stock']=disp;
             setCrudData(arreglo);
             document.getElementById('product').value = '';
@@ -57,9 +74,9 @@ function carga(){
             html += `
                 <tr>
                     <td>${i}</td>
-                    <td>${arreglo[k]['nombre']}</td>
-                    <td>${arreglo[k]['precio']}</td>
-                    <td>${arreglo[k]['stock']}</td>
+                    <td>${arreglo[k]['setNombre']}</td>
+                    <td>${arreglo[k]['setPrecio']}</td>
+                    <td>${arreglo[k]['setStock']}</td>
                     <td><a href="javascript:void(0)" onclick="edita(${k})">Editar</a>&nbsp;
                     <a href="javascript:void(0)" onclick="elimina(${k})">Eliminar</a></td>
                 </tr>`

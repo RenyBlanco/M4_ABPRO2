@@ -4,6 +4,8 @@
             {
                 "id": 1,
                 "nombre": "Celular Huawei",
+                "descripcion": "Celular Huawei, 4G, 32Gb RAM",
+                "etiquetas":["Celular", "Mobile", "4G"],
                 "precio": 230000,
                 "imagen": "huawei.jpg",
                 "stock": 10
@@ -11,6 +13,8 @@
             {
                 "id": 2,
                 "nombre": "Celular Motorola",
+                "descripcion": "Celular Motorola, 4G, 64Gb",
+                "etiquetas":["Celular","Mobile","4G"],
                 "precio": 185000,
                 "imagen": "motorola.jpg",
                 "stock": 9
@@ -18,6 +22,9 @@
             {
                 "id": 3,
                 "nombre": "Laptop Lenovo",
+                "descripcion": "8Gb RAM, SSD 500, I7, 15pulgadas",
+                "etiquetas":["Laptop","Lenovo","Intel"],
+
                 "precio": 950000,
                 "imagen": "laptop1.jpg",
                 "stock": 8
@@ -25,6 +32,8 @@
             {
                 "id": 4,
                 "nombre": "Laptop HP",
+                "descripcion": "8Gb RAM, SSD 500, I9, 14pulgadas",
+                "etiquetas":["Laptop","HP","Intel"],
                 "precio": 855000,
                 "imagen": "laptop2.jpg",
                 "stock": 7
@@ -32,6 +41,9 @@
             {
                 "id": 5,
                 "nombre": "Headphones urbenexs",
+                "descripcion": "Audifonos bluetooth, conector USB C",
+                "etiquetas":["Audifonos","Bluetooth"],
+
                 "precio": 20000,
                 "imagen": "head1.jpg",
                 "stock": 12
@@ -39,6 +51,8 @@
             {
                 "id": 6,
                 "nombre": "Headphones Shoks",
+                "descripcion": "Audifonos bluetooth, conector USB C, 14 horas autonomia",
+                "etiquetas":["Audifonos","Bluetooth"],
                 "precio": 35000,
                 "imagen": "head2.webp",
                 "stock": 11

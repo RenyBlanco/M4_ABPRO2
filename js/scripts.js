@@ -22,19 +22,28 @@ document.addEventListener('DOMContentLoaded', () => {
             llenaListado()
         });
     }else{
-        renderizarProductos(arreglo);
+        productos = arreglo;
+        renderizarProductos();
     }
 
     function llenaListado() {
         jQuery.each(tabla.Productos, function(i, fila) {
-            productos.push(fila);
+            const listaProducto = new Producto();
+            listaProducto.setNombre = fila.nombre;
+            listaProducto.setDescripcion = fila.descripcion;
+            listaProducto.setEtiquetas = fila.etiquetas;
+            listaProducto.setPrecio = fila.precio;
+            listaProducto.setImagen = fila.imagen;
+            listaProducto.setStock = fila.stock;
+            productos.push(listaProducto);
+            console.log('Listado', listaProducto);
         });
         setCrud();
-        renderizarProductos(productos);
+        renderizarProductos();
     }
 
-    function renderizarProductos(valor) {
-        valor.forEach(element => {
+    function renderizarProductos() {
+        productos.forEach(element => {
             // Estructura
             const miNodo = document.createElement('div');
             miNodo.classList.add('col-md-12');
@@ -44,19 +53,19 @@ document.addEventListener('DOMContentLoaded', () => {
             // Titulo
             const miNodoTitle = document.createElement('h5');
             miNodoTitle.classList.add('product-title');
-            miNodoTitle.textContent = element.nombre;
+            miNodoTitle.textContent = element.setNombre;
             // Imagen
             const miNodoImagen = document.createElement('img');
             miNodoImagen.classList.add('product__image');
-            miNodoImagen.setAttribute('src', './img/'+element.imagen);
+            miNodoImagen.setAttribute('src', './img/'+element.setImagen);
             // Stock
             const miNodoStock = document.createElement('p');
             miNodoStock.classList.add('product__stock');
-            miNodoStock.textContent = `disponible: ${element.stock}`;
+            miNodoStock.textContent = `disponible: ${element.setStock}`;
             // Precio
             const miNodoPrecio = document.createElement('p');
             miNodoPrecio.classList.add('product__price');
-            miNodoPrecio.textContent = `${formato.format(element.precio)}`;
+            miNodoPrecio.textContent = `${formato.format(element.setPrecio)}`;
             // Boton 
             const miNodoBoton = document.createElement('button');
             miNodoBoton.classList.add('btn', 'btn-outline-success','AGREGA');
