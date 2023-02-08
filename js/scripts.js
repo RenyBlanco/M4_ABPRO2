@@ -27,16 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function llenaListado() {
+        
         jQuery.each(tabla.Productos, function(i, fila) {
             const listaProducto = new Producto();
-            listaProducto.setNombre = fila.nombre;
-            listaProducto.setDescripcion = fila.descripcion;
-            listaProducto.setEtiquetas = fila.etiquetas;
-            listaProducto.setPrecio = fila.precio;
-            listaProducto.setImagen = fila.imagen;
-            listaProducto.setStock = fila.stock;
+            listaProducto.pId = i+1;
+            listaProducto.pNombre = fila.nombre;
+            listaProducto.pDescripcion = fila.descripcion;
+            listaProducto.pEtiquetas = fila.etiquetas;
+            listaProducto.pPrecio = fila.precio;
+            listaProducto.pImagen = fila.imagen;
+            listaProducto.pStock = fila.stock;
+            
             productos.push(listaProducto);
-            console.log('Listado', listaProducto);
         });
         setCrud();
         renderizarProductos();
@@ -53,19 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
             // Titulo
             const miNodoTitle = document.createElement('h5');
             miNodoTitle.classList.add('product-title');
-            miNodoTitle.textContent = element.setNombre;
+            miNodoTitle.textContent = element.nombre;
             // Imagen
             const miNodoImagen = document.createElement('img');
             miNodoImagen.classList.add('product__image');
-            miNodoImagen.setAttribute('src', './img/'+element.setImagen);
+            miNodoImagen.setAttribute('src', './img/'+element.imagen);
             // Stock
             const miNodoStock = document.createElement('p');
             miNodoStock.classList.add('product__stock');
-            miNodoStock.textContent = `disponible: ${element.setStock}`;
+            miNodoStock.textContent = `disponible: ${element.stock}`;
             // Precio
             const miNodoPrecio = document.createElement('p');
             miNodoPrecio.classList.add('product__price');
-            miNodoPrecio.textContent = `${formato.format(element.setPrecio)}`;
+            miNodoPrecio.textContent = `${formato.format(element.precio)}`;
             // Boton 
             const miNodoBoton = document.createElement('button');
             miNodoBoton.classList.add('btn', 'btn-outline-success','AGREGA');
@@ -334,7 +336,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //     updateStock();
     // }
     
-    
     // Search Dropdown Toggle
     $('.search-toggle').on('click', function (e) {
         $('.header-search-wrapper').toggleClass('show');
@@ -352,5 +353,4 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
     });
       
-
 });

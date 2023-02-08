@@ -1,53 +1,59 @@
 class Producto {
-    constructor() {
-        let id = 0;
-        let nombre = "";
-        let precio = 0;
-        let stock = 0;
-        let descripcion = "";
-        let etiquetas = [];
-        let imagen = "";
+    id;
+    nombre;
+    precio;
+    stock;
+    descripcion;
+    etiquetas ;
+    imagen;
+    constructor(_id, _nom, _pre, _dis, _desc, _eti, _imag) {
+        this.id = _id;
+        this.nombre = _nom;
+        this.precio = _pre;
+        this.stock = _dis;
+        this.descripcion = _desc;
+        this.etiquetas = _eti;
+        this.imagen = _imag;
     }
-    setId(id) {
+    set pId(id) {
         this.id = id;
     }
-    getId() { return this.id; }
-    setNombre(nombre) {
+    get pId() { return this.id; }
+
+    set pNombre(nombre) {
         this.nombre = nombre;
     }
-    getNombre() {
+    get pNombre() {
         return this.nombre;
     }
-    setPrecio(precio) {
+    set pPrecio(precio) {
         this.precio = precio;
     }
-    getPrecio() {
+    get pPrecio() {
         return this.precio;
     }
-    setStock(stock) {
+    set pStock(stock) {
         this.stock = stock;
     }
-    getStock() {
+    get pStock() {
         return this.stock;
     }
-    setDescripcion(descripcion) {
+    set pDescripcion(descripcion) {
         this.descripcion = descripcion;
     }
-    getDescripcion() {
+    get pDescripcion() {
         return this.descripcion;
     }
-    setEtiquetas(etiquetas) {
+    set pEtiquetas(etiquetas) {
         this.etiquetas = etiquetas;
     }
-    getEtiquetas() {
+    get pEtiquetas() {
         return this.etiquetas;
     }
-    setImagen(imagen) {
+    set pImagen(imagen) {
         this.imagen = imagen;
     }
-    getImagen() {
+    get pImagen() {
         return this.imagen;
     }
 }
-
-
