@@ -285,6 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
             var quantity = parseInt(quantityElement.value);
             var dispone = parseInt(stockElement.value);
             var queda = dispone-quantity;
+            console.log('Antes ', productos);
             for(let i=0; i < productos.length; i++) {
                 if(productos[i].id == id){
                     lis[id-1].innerHTML = "disponible : "+(queda);
