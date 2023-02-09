@@ -69,18 +69,18 @@
                                     <select id="cat" name="cat">
                                         <option value="all">Todas Categorias</option>
                                         <option value="electronicos">Electronicos</option>
-                                        <option value="21">- Smart TVs</option>
-                                        <option value="22">- Celulares</option>
-                                        <option value="63">- Consolas</option>
+                                        <option value="smarttv">- Smart TVs</option>
+                                        <option value="celular">- Celulares</option>
+                                        <option value="consola">- Consolas</option>
                                         <option value="audio">Audio</option>
-                                        <option value="31">- Autodifonos</option>
-                                        <option value="33">- Bocinas</option>
+                                        <option value="audiofono">- Audifonos</option>
+                                        <option value="bocina">- Bocinas</option>
                                         <option value="computadoras">Computadoras</option>
-                                        <option value="21">- Laptops</option>
-                                        <option value="22">- Desktops</option>
+                                        <option value="laptop">- Laptops</option>
+                                        <option value="desktop">- Desktops</option>
                                     </select>
                                 </div><!-- End .select-custom -->
-                                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                                <button class="btn" type="submit" id="botonBuscar"><i class="fas fa-search"></i></button>
                             </div><!-- End .header-search-wrapper -->
                         </form>
                     </div><!-- End .header-search -->
@@ -136,7 +136,7 @@
     <script>
         //document.getElementById("fecha").innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
         $(document).ready(function(){
-
+            
             (function () {
                 emailjs.init("m0bJyc8oDT7rSweoJ");
             })();
@@ -162,10 +162,15 @@
                 };
             });
 
+            
             filterSelection('all');
+        });
 
-            function filterSelection(c) {
-                console.log('Cat', c);
+    </script>
+    <script>
+        
+
+        function filterSelection(c) {
             var x, i;
             x = document.getElementsByClassName("product");
             if (c == "all") c = "";
@@ -173,45 +178,31 @@
                 w3RemoveClass(x[i], "show");
                 if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
             }
-            }
+        }
 
-            function w3AddClass(element, name) {
+        function w3AddClass(element, name) {
             var i, arrl, arr2;
             arr1 = element.className.split(" ");
             arr2 = name.split(" ");
             for (i = 0; i < arr2.length; i++) {
                 if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
             }
-            }
+        }
 
-            function w3RemoveClass(element, name) {
+        function w3RemoveClass(element, name) {
             var i, arr1, arr2;
             arr1 = element.className.split(" ");
             arr2 = name.split(" ");
             for (i = 0; i < arr2.length; i++) {
                 while (arr1.indexOf(arr2[i]) > -1) {
-                arr1.splice(arr1.indexOf(arr2[i]), 1);
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
                 }
             }
             element.className = arr1.join(" ");
-            }
+        }
 
-            var btnContainer = document.getElementById("cat");
-            btnContainer.addEventListener("change",()=>{
-                filterSelection(btnContainer.value);
-            });
-            // Add active class to the current button (highlight it)
-            //var btns = btnContainer.getElementsByClassName("btn");
-            // for (var i = 0; i < btns.length; i++) {
-            //     btns[i].addEventListener("click", function () {
-            //         var current = document.getElementsByClassName("active");
-            //         current[0].className = current[0].className.replace(" active", "");
-            //         this.className += " active";
-            //     });
-            // }
-            
-        });
-
+        var btnContainer = document.getElementById("cat");
+        btnContainer.addEventListener("change", filterSelection(btnContainer.value));
     </script>
     
 </body>

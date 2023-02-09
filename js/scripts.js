@@ -1,6 +1,8 @@
 // Carro 2
 document.addEventListener('DOMContentLoaded', () => {
-    
+    const entrada = document.querySelector('#q');
+    const boton = document.querySelector('#botonBuscar');
+
     let formato = new Intl.NumberFormat('es-CL', {
         style: 'currency',
         currency: 'CLP'
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         productos = arreglo;
         renderizarProductos();
     }
+
 
     function llenaListado() {
         
@@ -95,6 +98,22 @@ document.addEventListener('DOMContentLoaded', () => {
         return arreglo;
     }
     
+    const filtrar = () => {
+        const txt = entrada.value.toLowerCase();
+        for(let prod of productos){
+            let nomProd = prod.nombre.toLowerCase();
+            let catProd = prod.categoria.toLowerCase();
+            let desProd = prod.descripcion.toLowerCase();
+            //let tagProd = prod.etiquetas.toLowerCase();
+            if(nomProd.indexOf(txt) !== -1 || catProd.indexOf(txt) !== -1 || desProd.indexOf(txt) !== -1) {
+                filterSelection(txt);
+            }
+        }
+    };
+
+    boton.addEventListener('click', filtrar);
+    entrada.addEventListener('keyup', filtrar);
+
     (function () {
         const cartInfo = document.getElementById("cart-info");
         const cart = document.getElementById("cart");
