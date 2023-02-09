@@ -18,7 +18,9 @@ class Producto {
     set pId(id) {
         this.id = id;
     }
-    get pId() { return this.id; }
+    get pId() { 
+        return this.id; 
+    }
 
     set pNombre(nombre) {
         this.nombre = nombre;

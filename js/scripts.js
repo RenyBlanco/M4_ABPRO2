@@ -29,16 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function llenaListado() {
         
         jQuery.each(tabla.Productos, function(i, fila) {
-            const listaProducto = new Producto();
-            listaProducto.pId = i+1;
-            listaProducto.pNombre = fila.nombre;
-            listaProducto.pDescripcion = fila.descripcion;
-            listaProducto.pEtiquetas = fila.etiquetas;
-            listaProducto.pPrecio = fila.precio;
-            listaProducto.pImagen = fila.imagen;
-            listaProducto.pStock = fila.stock;
+            const nuevoProducto = new Producto();
+            nuevoProducto.pId = i+1;
+            nuevoProducto.pNombre = fila.nombre;
+            nuevoProducto.pDescripcion = fila.descripcion;
+            nuevoProducto.pEtiquetas = fila.etiquetas;
+            nuevoProducto.pPrecio = fila.precio;
+            nuevoProducto.pImagen = fila.imagen;
+            nuevoProducto.pStock = fila.stock;
             
-            productos.push(listaProducto);
+            productos.push(nuevoProducto);
         });
         setCrud();
         renderizarProductos();
