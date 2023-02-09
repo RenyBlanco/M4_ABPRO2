@@ -6,7 +6,8 @@ class Producto {
     descripcion;
     etiquetas ;
     imagen;
-    constructor(_id, _nom, _pre, _dis, _desc, _eti, _imag) {
+    categoria;
+    constructor(_id, _nom, _pre, _dis, _desc, _eti, _imag, _cat) {
         this.id = _id;
         this.nombre = _nom;
         this.precio = _pre;
@@ -14,6 +15,7 @@ class Producto {
         this.descripcion = _desc;
         this.etiquetas = _eti;
         this.imagen = _imag;
+        this.categoria = _cat;
     }
     set pId(id) {
         this.id = id;
@@ -57,5 +59,11 @@ class Producto {
     }
     get pImagen() {
         return this.imagen;
+    }
+    set pCategoria(categoria) {
+        this.categoria = categoria;
+    }
+    get pCategoria() {
+        return this.categoria;
     }
 }

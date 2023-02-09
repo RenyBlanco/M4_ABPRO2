@@ -5,6 +5,7 @@
                 "id": 1,
                 "nombre": "Celular Huawei",
                 "descripcion": "Celular Huawei, 4G, 32Gb RAM",
+                "categoria":"electronicos",
                 "etiquetas":["Celular", "Mobile", "4G"],
                 "precio": 230000,
                 "imagen": "huawei.jpg",
@@ -14,6 +15,7 @@
                 "id": 2,
                 "nombre": "Celular Motorola",
                 "descripcion": "Celular Motorola, 4G, 64Gb",
+                "categoria":"electronicos",
                 "etiquetas":["Celular","Mobile","4G"],
                 "precio": 185000,
                 "imagen": "motorola.jpg",
@@ -23,8 +25,8 @@
                 "id": 3,
                 "nombre": "Laptop Lenovo",
                 "descripcion": "8Gb RAM, SSD 500, I7, 15pulgadas",
+                "categoria":"computadoras",
                 "etiquetas":["Laptop","Lenovo","Intel"],
-
                 "precio": 950000,
                 "imagen": "laptop1.jpg",
                 "stock": 8
@@ -33,6 +35,7 @@
                 "id": 4,
                 "nombre": "Laptop HP",
                 "descripcion": "8Gb RAM, SSD 500, I9, 14pulgadas",
+                "categoria":"computadoras",
                 "etiquetas":["Laptop","HP","Intel"],
                 "precio": 855000,
                 "imagen": "laptop2.jpg",
@@ -40,21 +43,42 @@
             },
             {
                 "id": 5,
+                "nombre": "DeskTop Asius",
+                "descripcion": "8Gb RAM, SSD 500, I9, 14pulgadas",
+                "categoria":"computadoras",
+                "etiquetas":["desktop","asius","Intel"],
+                "precio": 855000,
+                "imagen": "desktop1.png",
+                "stock": 7
+            },
+            {
+                "id": 6,
                 "nombre": "Headphones urbenexs",
                 "descripcion": "Audifonos bluetooth, conector USB C",
                 "etiquetas":["Audifonos","Bluetooth"],
-
+                "categoria":"audio",
                 "precio": 20000,
                 "imagen": "head1.jpg",
                 "stock": 12
             },
             {
-                "id": 6,
+                "id": 7,
                 "nombre": "Headphones Shoks",
                 "descripcion": "Audifonos bluetooth, conector USB C, 14 horas autonomia",
                 "etiquetas":["Audifonos","Bluetooth"],
+                "categoria":"audio",
                 "precio": 35000,
                 "imagen": "head2.webp",
+                "stock": 11
+            },
+            {
+                "id": 8,
+                "nombre": "Parlantes",
+                "descripcion": "Bocinas, 14 horas autonomia",
+                "etiquetas":["Parlantes","Bluetooth"],
+                "categoria":"audio",
+                "precio": 35000,
+                "imagen": "Bocinas.webp",
                 "stock": 11
             }
         ]

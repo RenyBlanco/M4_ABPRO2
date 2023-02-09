@@ -7,7 +7,7 @@
   --secundario: #0097a7;
   --gris: #757575;
   --grisclaro: #f1eeee;
-  --primaryColor: rgb(169, 233, 245);
+  --primaryColor: rgb(16, 134, 245);
   --mainWhite: rgb(243, 243, 240);
   --mainGrey: rgb(169, 233, 245);;
 }
@@ -212,7 +212,7 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 16px;
 }
 .topnav a:hover {
   background-color: var(--mainWhite);
@@ -250,6 +250,10 @@ body {
   width: 30%;
   height: 380px;
   margin: 10px;
+  display: none;
+}
+.show {
+  display: block;
 }
 .product__image {
   width: 150px;

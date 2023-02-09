@@ -1,6 +1,8 @@
 // Carro 2
 document.addEventListener('DOMContentLoaded', () => {
-    
+    const entrada = document.querySelector('#q');
+    // const boton = document.querySelector('#botonBuscar');
+
     let formato = new Intl.NumberFormat('es-CL', {
         style: 'currency',
         currency: 'CLP'
@@ -26,17 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarProductos();
     }
 
+
     function llenaListado() {
         
         jQuery.each(tabla.Productos, function(i, fila) {
             const nuevoProducto = new Producto();
             nuevoProducto.pId = i+1;
             nuevoProducto.pNombre = fila.nombre;
+            nuevoProducto.pPrecio = fila.precio;
+            nuevoProducto.pStock = fila.stock;
             nuevoProducto.pDescripcion = fila.descripcion;
             nuevoProducto.pEtiquetas = fila.etiquetas;
-            nuevoProducto.pPrecio = fila.precio;
             nuevoProducto.pImagen = fila.imagen;
-            nuevoProducto.pStock = fila.stock;
+            nuevoProducto.pCategoria = fila.categoria;
             
             productos.push(nuevoProducto);
         });
@@ -51,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             miNodo.classList.add('col-md-12');
             // Body
             const miNodoCardBody = document.createElement('div');
-            miNodoCardBody.classList.add('product');
+            miNodoCardBody.classList.add('product',element.categoria);
             // Titulo
             const miNodoTitle = document.createElement('h5');
             miNodoTitle.classList.add('product-title');
@@ -94,6 +98,22 @@ document.addEventListener('DOMContentLoaded', () => {
         return arreglo;
     }
     
+    // const filtrar = () => {
+    //     const txt = entrada.value.toLowerCase();
+    //     for(let prod of productos){
+    //         let nomProd = prod.nombre.toLowerCase();
+    //         let catProd = prod.categoria.toLowerCase();
+    //         let desProd = prod.descripcion.toLowerCase();
+    //         //let tagProd = prod.etiquetas.toLowerCase();
+    //         if(nomProd.indexOf(txt) !== -1 || catProd.indexOf(txt) !== -1 || desProd.indexOf(txt) !== -1) {
+    //             filterSelection(txt);
+    //         }
+    //     }
+    // };
+
+    // boton.addEventListener('click', filtrar);
+    //entrada.addEventListener('keyup', filtrar);
+
     (function () {
         const cartInfo = document.getElementById("cart-info");
         const cart = document.getElementById("cart");
