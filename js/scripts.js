@@ -29,16 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function llenaListado() {
         
         jQuery.each(tabla.Productos, function(i, fila) {
-            const listaProducto = new Producto();
-            listaProducto.pId = i+1;
-            listaProducto.pNombre = fila.nombre;
-            listaProducto.pDescripcion = fila.descripcion;
-            listaProducto.pEtiquetas = fila.etiquetas;
-            listaProducto.pPrecio = fila.precio;
-            listaProducto.pImagen = fila.imagen;
-            listaProducto.pStock = fila.stock;
+            const nuevoProducto = new Producto();
+            nuevoProducto.pId = i+1;
+            nuevoProducto.pNombre = fila.nombre;
+            nuevoProducto.pPrecio = fila.precio;
+            nuevoProducto.pStock = fila.stock;
+            nuevoProducto.pDescripcion = fila.descripcion;
+            nuevoProducto.pEtiquetas = fila.etiquetas;
+            nuevoProducto.pImagen = fila.imagen;
+            nuevoProducto.pCategoria = fila.categoria;
             
-            productos.push(listaProducto);
+            productos.push(nuevoProducto);
         });
         setCrud();
         renderizarProductos();
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             miNodo.classList.add('col-md-12');
             // Body
             const miNodoCardBody = document.createElement('div');
-            miNodoCardBody.classList.add('product');
+            miNodoCardBody.classList.add('product',element.categoria);
             // Titulo
             const miNodoTitle = document.createElement('h5');
             miNodoTitle.classList.add('product-title');
