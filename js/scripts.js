@@ -1,7 +1,8 @@
 // Carro 2
 document.addEventListener('DOMContentLoaded', () => {
+    // Busqueda por input
     const entrada = document.querySelector('#q');
-    // const boton = document.querySelector('#botonBuscar');
+    const boton = document.querySelector('#botonBuscar');
 
     let formato = new Intl.NumberFormat('es-CL', {
         style: 'currency',
@@ -41,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
             nuevoProducto.pEtiquetas = fila.etiquetas;
             nuevoProducto.pImagen = fila.imagen;
             nuevoProducto.pCategoria = fila.categoria;
-            
             productos.push(nuevoProducto);
         });
         setCrud();
@@ -98,20 +98,26 @@ document.addEventListener('DOMContentLoaded', () => {
         return arreglo;
     }
     
-    // const filtrar = () => {
-    //     const txt = entrada.value.toLowerCase();
-    //     for(let prod of productos){
-    //         let nomProd = prod.nombre.toLowerCase();
-    //         let catProd = prod.categoria.toLowerCase();
-    //         let desProd = prod.descripcion.toLowerCase();
-    //         //let tagProd = prod.etiquetas.toLowerCase();
-    //         if(nomProd.indexOf(txt) !== -1 || catProd.indexOf(txt) !== -1 || desProd.indexOf(txt) !== -1) {
-    //             filterSelection(txt);
-    //         }
-    //     }
-    // };
+    const filtrar = () => {
+        const txt = entrada.value.toLowerCase();
+        var clases = document.getElementsByClassName("product");
+        var ind = 0;
+        for(let prod of productos){
+            clases[ind].classList.remove("show")
+            let nomProd = prod.nombre.toLowerCase();
+            let catProd = prod.categoria.toLowerCase();
+            let desProd = prod.descripcion.toLowerCase();
+            let tagProd = prod.etiquetas.toString().toLowerCase();
+            if(nomProd.indexOf(txt) !== -1 || catProd.indexOf(txt) !== -1 
+            || desProd.indexOf(txt) !== -1 || tagProd.indexOf(txt)!== -1){
+                clases[ind].classList.add("show");
+              
+            }
+            ind++;
+        }
+    };
 
-    // boton.addEventListener('click', filtrar);
+    boton.addEventListener('click', filtrar);
     //entrada.addEventListener('keyup', filtrar);
 
     (function () {
