@@ -111,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if(nomProd.indexOf(txt) !== -1 || catProd.indexOf(txt) !== -1 
             || desProd.indexOf(txt) !== -1 || tagProd.indexOf(txt)!== -1){
                 clases[ind].classList.add("show");
-              
             }
             ind++;
         }
