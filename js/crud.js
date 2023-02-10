@@ -37,7 +37,7 @@ function proceso(){
                 
                 arreglo.push(nuevoProducto);
                 setCrudData(arreglo);
-                document.getElementById('product').value = '';
+                limpiaInputs();
                 Swal.fire(
                     'Exito!',
                     'Producto añadido!',
@@ -58,7 +58,7 @@ function proceso(){
             }
             arreglo[id]['stock']=disp;
             setCrudData(arreglo);
-            document.getElementById('product').value = '';
+            limpiaInputs();
             Swal.fire(
                 'Exito!',
                 'Producto Actualizado!',
@@ -67,6 +67,15 @@ function proceso(){
             carga();
         }
     }
+}
+
+function limpiaInputs(){
+    document.getElementById('product').value = '';
+    document.getElementById('descrip').value = '';
+    document.getElementById('etiquetas').value = '';
+    document.getElementById('precio').value = '';
+    document.getElementById('imagen').value = '';
+    document.getElementById('stock').value = '';
 }
 
 function carga(){
